@@ -1,6 +1,15 @@
 h1 = @chat_room.title
 #messages data-chat-room-id="#{@chat_room.id}"
-  = render @chat_room.messages
+  .container
+    .row
+      .col-md-5
+        .panel.panel-primary
+          .panel-heading
+            span.glyphicon.glyphicon-comment
+            | Chat
+          .panel-body
+            ul.chat
+              = render @chat_room.messages
 
   = render 'form'
 

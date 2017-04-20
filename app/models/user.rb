@@ -5,7 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :chat_rooms, dependent: :destroy
-  has_many :messages, dependent: :destroy #TODO maybe add through?
+  has_many :messages, dependent: :destroy
+  belongs_to :dialect
 
   def nickname
       name ? name : email.split('@').first
