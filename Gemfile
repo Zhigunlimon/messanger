@@ -19,13 +19,14 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem "slim-rails"
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
+ gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
+  gem 'awesome_print', '~> 1.7'
 end
 
 group :development do

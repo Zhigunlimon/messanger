@@ -6,4 +6,8 @@ class User < ApplicationRecord
 
   has_many :chat_rooms, dependent: :destroy
   has_many :messages, dependent: :destroy #TODO maybe add through?
+
+  def nickname
+      name ? name : email.split('@').first
+  end
 end
