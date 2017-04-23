@@ -1,7 +1,9 @@
-.h1 Chat rooms
+.title
+  h2 Chat rooms
 
-p.lead
-  = link_to 'New chat room', new_chat_room_path, class: 'btn btn-primary'
+  p.lead
+    = link_to 'New chat room', new_chat_room_path, class: 'btn btn-success'
 
-.ul
-  = render @chat_rooms
+  .shared-links
+    .ul
+      = render @chat_rooms

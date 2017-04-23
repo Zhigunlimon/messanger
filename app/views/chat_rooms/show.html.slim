@@ -1,10 +1,10 @@
-.container.clearfix
+.clearfix
   .row
     .col-md-9
       .chat
         .chat-header.clearfix
           .chat-about
-            .chat-with Chat
+            .chat-with Chat "#{@chat_room.title}"
             .chat-num-messages Your dialect is "#{current_user.dialect.name}"
           i.fa.fa-star
         .chat-history
