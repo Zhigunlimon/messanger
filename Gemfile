@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.1.0'
+end
 
 gem 'rails', '~> 5.0.1'
 gem 'pg', '~> 0.18'
@@ -18,7 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem "slim-rails"
-gem 'glyphicons-rails'
+gem "font-awesome-rails"
 # Use Redis adapter to run Action Cable in production
  gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

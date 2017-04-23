@@ -1,7 +1,8 @@
 $(document).on 'turbolinks:load', ->
   messages = $('#messages')
-  if $('#messages').length > 0
-    messages_to_bottom = -> messages.scrollTop(messages.prop("scrollHeight"))
+  chat = $('.chat-history')
+  if $(chat).length > 0
+    messages_to_bottom = -> chat.scrollTop(chat.prop("scrollHeight"))
 
     messages_to_bottom()
 
@@ -16,7 +17,7 @@ $(document).on 'turbolinks:load', ->
         # Called when the subscription has been terminated by the server
 
       received: (data) ->
-        messages.append data['message']
+        chat.find('ul').append data['message']
         messages_to_bottom()
 
       send_message: (message, chat_room_id) ->

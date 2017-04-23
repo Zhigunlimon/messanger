@@ -1,6 +1,8 @@
 .panel-footer
   = form_for @message, url: '#' do |f|
-    .input-group
-      = f.text_area :body, class: 'form-control input-sm', id: 'btn-input'
-      span.input-group-btn
-        = f.submit "send", class: 'btn.btn-warning.btn-sm', id: 'btn-chat'
+    .form-group
+      = f.text_area :body, class: 'form-control'
+      small.text-muted From 2 to 1000 characters
+
+      = f.submit "Post", class: 'send-btn'
+
