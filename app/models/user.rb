@@ -9,4 +9,18 @@ class User < ApplicationRecord
   def nickname
       name ? name : email.split('@').first
   end
+
+  def online
+    REDIS.sadd("online", self.nickname)
+    AppearanceBroadcastJob.perform_later list
+  end
+
+  def offline
+    REDIS.srem("online", self.nickname)
+    AppearanceBroadcastJob.perform_later list
+  end
+
+  def list
+    REDIS.smembers("online")
+  end
 end

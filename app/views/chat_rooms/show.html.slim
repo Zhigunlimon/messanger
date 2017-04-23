@@ -15,12 +15,3 @@
           = render 'form'
     .col-md-3
       #people-list.people-list
-        ul.list
-          - @users.each do |user|
-            li.clearfix
-              = image_tag user.dialect.image, class: 'avatar-icon'
-              .about
-                .name = user.nickname
-                .status
-                  i.fa.fa-circle.online
-                  | online 
