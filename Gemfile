@@ -22,6 +22,8 @@ gem 'devise'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem "slim-rails"
 gem "font-awesome-rails"
+gem 'httparty', '~> 0.13.7'
+gem 'nokogiri', '~> 1.6', '>= 1.6.8'
 # Use Redis adapter to run Action Cable in production
  gem 'redis', '~> 3.0'
  gem 'redis-namespace'

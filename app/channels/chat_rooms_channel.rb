@@ -7,6 +7,7 @@ class ChatRoomsChannel < ApplicationCable::Channel
   end
 
   def send_message(data)
-     current_user.messages.create!(body: data['message'], chat_room_id: data['chat_room_id'])
+    message = MessageTranslateService.translate(data['message'], current_user.dialect.api_name)
+    current_user.messages.create!(body: message, chat_room_id: data['chat_room_id'])
   end
 end
