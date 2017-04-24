@@ -1,5 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe ChatRoom, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should have_many(:users).through(:messages) }
+  it { should have_many(:messages).order(created_at: :asc) }
 end
